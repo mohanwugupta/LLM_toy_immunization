@@ -33,9 +33,11 @@ def run_attack(args):
     global_step = 0
     attack_checkpoints = [10, 50, 100, 250, 500, 1000]
     
-    while global_step < max(attack_checkpoints):
+    max_limit = args.max_steps if args.max_steps is not None else max(attack_checkpoints)
+    
+    while global_step < max_limit:
         for batch in dataloader:
-            if global_step >= max(attack_checkpoints):
+            if global_step >= max_limit:
                 break
                 
             # Attack fine-tunes purely on Uniform contexts -> Uniform targets
@@ -70,6 +72,7 @@ if __name__ == "__main__":
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=3e-5) # Default attack lr
     parser.add_argument("--context_len", type=int, default=128)
+    parser.add_argument("--max_steps", type=int, default=None, help="Override attack_checkpoints max")
     
     args = parser.parse_args()
     run_attack(args)

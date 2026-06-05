@@ -33,9 +33,12 @@ def train(args):
     
     print(f"Starting training for condition {args.condition}...")
     
+    global_step = 0
     for epoch in range(args.epochs):
         total_loss = 0
         for batch_idx, batch in enumerate(dataloader):
+            if args.max_steps is not None and global_step >= args.max_steps:
+                break
             # For C1, only Normal contexts
             if args.condition == "C1":
                 prompt_family = "normal"
@@ -60,6 +63,11 @@ def train(args):
             
             if batch_idx % 10 == 0:
                 print(f"Epoch {epoch} | Batch {batch_idx} | Loss: {loss.item():.4f}")
+            global_step += 1
+            
+        if args.max_steps is not None and global_step >= args.max_steps:
+            print(f"Reached max_steps ({args.max_steps}), stopping training.")
+            break
                 
     # Save the adapter
     output_dir = os.path.join(args.output_dir, args.condition)
@@ -78,6 +86,7 @@ if __name__ == "__main__":
     parser.add_argument("--context_len", type=int, default=128)
     parser.add_argument("--lora_r", type=int, default=8)
     parser.add_argument("--lora_alpha", type=int, default=16)
+    parser.add_argument("--max_steps", type=int, default=None, help="Stop after max_steps batches")
     
     args = parser.parse_args()
     train(args)

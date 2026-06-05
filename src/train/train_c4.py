@@ -32,8 +32,11 @@ def train_c4(args):
     layer_idx = args.target_layer
     lambda_rep = args.lambda_rep
     
+    global_step = 0
     for epoch in range(args.epochs):
         for batch_idx, batch in enumerate(dataloader):
+            if args.max_steps is not None and global_step >= args.max_steps:
+                break
             # For C4, we sample Uniform contexts
             # We first need the safe anchors (Normal contexts)
             
@@ -91,6 +94,11 @@ def train_c4(args):
             
             if batch_idx % 10 == 0:
                 print(f"Epoch {epoch} | Batch {batch_idx} | Task: {task_loss.item():.4f} | Rep: {rep_loss.item():.4f}")
+            global_step += 1
+            
+        if args.max_steps is not None and global_step >= args.max_steps:
+            print(f"Reached max_steps ({args.max_steps}), stopping C4 training.")
+            break
                 
     output_dir = os.path.join(args.output_dir, "C4")
     os.makedirs(output_dir, exist_ok=True)
@@ -109,6 +117,7 @@ if __name__ == "__main__":
     parser.add_argument("--lora_alpha", type=int, default=16)
     parser.add_argument("--target_layer", type=int, default=-1)
     parser.add_argument("--lambda_rep", type=float, default=0.1)
+    parser.add_argument("--max_steps", type=int, default=None, help="Stop after max_steps batches")
     
     args = parser.parse_args()
     train_c4(args)
