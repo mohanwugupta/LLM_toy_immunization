@@ -1,0 +1,25 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project results and data
+results/
+artifacts/
+logs/
+.DS_Store
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp

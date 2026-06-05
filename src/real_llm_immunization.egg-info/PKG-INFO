@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: real_llm_immunization
+Version: 0.1.0
+Summary: Real-LLM Numerical Representational Immunization Benchmark
+Requires-Python: >=3.9
+Requires-Dist: torch>=2.0.0
+Requires-Dist: transformers
+Requires-Dist: peft
+Requires-Dist: numpy
+Requires-Dist: pytest
+Requires-Dist: pyyaml
+Requires-Dist: scikit-learn

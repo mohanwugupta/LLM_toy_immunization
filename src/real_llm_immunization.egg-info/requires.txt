@@ -1,0 +1,7 @@
+torch>=2.0.0
+transformers
+peft
+numpy
+pytest
+pyyaml
+scikit-learn
