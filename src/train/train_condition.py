@@ -26,7 +26,7 @@ def train(args):
     # For C1, we only train on Normal contexts
     # We will just iterate and randomly select prompt family per batch
     
-    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True, collate_fn=lambda x: x)
     optimizer = AdamW(model.parameters(), lr=args.learning_rate)
     
     model.train()

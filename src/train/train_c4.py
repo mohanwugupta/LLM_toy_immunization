@@ -22,7 +22,7 @@ def train_c4(args):
     sigma_values = [40, 60, 80, 100, 120]
     
     dataset = NumericDataset(mu_values=mu_values, sigma_values=sigma_values, length=args.context_len)
-    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True, collate_fn=lambda x: x)
     optimizer = AdamW(model.parameters(), lr=args.learning_rate)
     
     model.train()
