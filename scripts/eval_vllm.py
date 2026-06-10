@@ -25,12 +25,14 @@ def run_vllm_evaluation(
     
     print(f"Loading vLLM model: {model_path} with adapter: {adapter_path}")
     
-    # Initialize LLM. If we have an adapter, load it through vLLM's LoRA support.
+    # max_logprobs raises the per-request cap (default is 20).
+    # We set it to 1000 so we can capture most of the number-token vocabulary.
     llm = LLM(
         model=model_path,
         enable_lora=bool(adapter_path),
         max_lora_rank=64 if adapter_path else None,
         tensor_parallel_size=1,
+        max_logprobs=1000,
     )
     
     if adapter_path:
@@ -45,15 +47,12 @@ def run_vllm_evaluation(
         
     prompts = [item["prompt"] for item in data]
     
-    # We only care about the very next token probabilities. 
-    # vLLM supports logprobs returning the top K logprobs.
-    # To reliably get probabilities for all numbers 0-999, we'd ideally request top_logprobs=1000 
-    # or use a custom logits processor, but vLLM allows requesting top_logprobs.
-    # We will request a large number of top logprobs to ensure we capture the number tokens.
+    # Request top-1000 logprobs — enough to cover all single-token number representations.
+    # The engine cap is set to 1000 above.
     sampling_params = SamplingParams(
         temperature=0.0,
         max_tokens=1,
-        logprobs=2000, # Large enough to cover vocabulary of numbers ideally
+        logprobs=1000,
     )
     
     print(f"Running inference on {len(prompts)} prompts...")
