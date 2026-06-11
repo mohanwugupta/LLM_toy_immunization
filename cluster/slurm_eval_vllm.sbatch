@@ -119,7 +119,11 @@ fi
 echo "Running vLLM Evaluations..."
 
 for ATTACK_STEP in 0 10 50 100 250 500; do
-    ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/attack_step_${ATTACK_STEP}"
+    if [ "$ATTACK_STEP" -eq 0 ]; then
+        ADAPTER_PATH="results/adapters/${CONDITION}"
+    else
+        ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/attack_step_${ATTACK_STEP}"
+    fi
     
     echo "Evaluating Attack Step: $ATTACK_STEP"
     
