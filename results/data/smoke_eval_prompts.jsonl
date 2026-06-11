@@ -1,0 +1,2 @@
+{"example_id": "test_1", "mu": 500, "sigma": 100, "family": "normal", "matched_family": "uniform", "context_len": 16, "prompt": "500,510,490,"}
+{"example_id": "test_2", "mu": 400, "sigma": 80, "family": "uniform", "matched_family": "normal", "context_len": 16, "prompt": "380,420,400,"}
