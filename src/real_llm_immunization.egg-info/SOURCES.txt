@@ -1,5 +1,6 @@
 README.md
 pyproject.toml
+src/attack/run_attack.py
 src/data/datasets.py
 src/data/generate_numeric.py
 src/data/tokenize_numbers.py
@@ -17,6 +18,7 @@ src/train/losses.py
 src/train/train_c4.py
 src/train/train_condition.py
 tests/test_data_generation.py
+tests/test_end_to_end_tiny.py
 tests/test_spi.py
 tests/test_tokenization.py
 tests/test_training_losses.py

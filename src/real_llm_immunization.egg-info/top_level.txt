@@ -1,7 +1,5 @@
-analysis
 attack
 data
 eval
 models
 train
-utils
