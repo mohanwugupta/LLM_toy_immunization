@@ -1,0 +1,30 @@
+run_id: iteration2
+target_family: normal
+conditions:
+  - C1
+  - C2
+  - C3
+  - C4
+seeds:
+  - 42
+  - 43
+  - 44
+attack_types:
+  - sampled
+  - distributional
+attack_lrs:
+  - 1.0e-5
+  - 3.0e-5
+difficulty_levels:
+  - 1
+  - 2
+  - 3
+context_lengths:
+  - 16
+  - 64
+  - 128
+  - 256
+logprobs: 1000
+max_tokens: 1
+temperature: 0.0
+output_schema_version: iteration2-v1

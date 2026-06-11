@@ -59,7 +59,7 @@ def compute_spi(
     
     if np.sum(uniform_unnorm) == 0:
         # Fallback if no support in range (unlikely)
-        uniform_unnorm = np.ones_len(support_list)
+        uniform_unnorm = np.ones(len(support_list))
         
     q_uniform = uniform_unnorm / np.sum(uniform_unnorm)
     

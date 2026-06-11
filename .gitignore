@@ -14,7 +14,9 @@ env.bak/
 venv.bak/
 
 # Project results and data
-results/
+!results/*
+results/**/*.safetensors
+results/**/
 artifacts/
 logs/
 .DS_Store

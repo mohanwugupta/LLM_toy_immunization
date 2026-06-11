@@ -33,9 +33,10 @@ def train_c4(args):
     lambda_rep = args.lambda_rep
     
     global_step = 0
+    max_steps = getattr(args, "max_steps", None)
     for epoch in range(args.epochs):
         for batch_idx, batch in enumerate(dataloader):
-            if args.max_steps is not None and global_step >= args.max_steps:
+            if max_steps is not None and global_step >= max_steps:
                 break
             # For C4, we sample Uniform contexts
             # We first need the safe anchors (Normal contexts)
@@ -96,8 +97,8 @@ def train_c4(args):
                 print(f"Epoch {epoch} | Batch {batch_idx} | Task: {task_loss.item():.4f} | Rep: {rep_loss.item():.4f}")
             global_step += 1
             
-        if args.max_steps is not None and global_step >= args.max_steps:
-            print(f"Reached max_steps ({args.max_steps}), stopping C4 training.")
+        if max_steps is not None and global_step >= max_steps:
+            print(f"Reached max_steps ({max_steps}), stopping C4 training.")
             break
                 
     output_dir = os.path.join(args.output_dir, "C4")

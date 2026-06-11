@@ -10,7 +10,7 @@
 #SBATCH --mail-type=end
 #SBATCH --mail-user=mg9965@princeton.edu
 #SBATCH --time=1:00:00
-#SBATCH --array=0-11
+#SBATCH --array=0-5183
 #SBATCH --output=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.out
 #SBATCH --error=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.err
 
@@ -22,16 +22,44 @@ set -eo pipefail
 
 CONDITIONS=("C1" "C2" "C3" "C4")
 SEEDS=(42 43 44)
+ATTACK_TYPES=("sampled" "distributional")
+ATTACK_LRS=("1e-05" "3e-05")
+ATTACK_STEPS=(0 10 50 100 250 500 1000 2500 5000)
+DIFFICULTY_LEVELS=(1 2 3)
+CONTEXT_LENGTHS=(16 64 128 256)
 
-COND_IDX=$((SLURM_ARRAY_TASK_ID / 3))
-SEED_IDX=$((SLURM_ARRAY_TASK_ID % 3))
+N_SEEDS=${#SEEDS[@]}
+N_ATTACK_TYPES=${#ATTACK_TYPES[@]}
+N_ATTACK_LRS=${#ATTACK_LRS[@]}
+N_ATTACK_STEPS=${#ATTACK_STEPS[@]}
+N_DIFFICULTY=${#DIFFICULTY_LEVELS[@]}
+N_CONTEXT=${#CONTEXT_LENGTHS[@]}
+
+TASK_ID=$SLURM_ARRAY_TASK_ID
+CONTEXT_IDX=$((TASK_ID % N_CONTEXT))
+TASK_ID=$((TASK_ID / N_CONTEXT))
+DIFFICULTY_IDX=$((TASK_ID % N_DIFFICULTY))
+TASK_ID=$((TASK_ID / N_DIFFICULTY))
+ATTACK_STEP_IDX=$((TASK_ID % N_ATTACK_STEPS))
+TASK_ID=$((TASK_ID / N_ATTACK_STEPS))
+LR_IDX=$((TASK_ID % N_ATTACK_LRS))
+TASK_ID=$((TASK_ID / N_ATTACK_LRS))
+ATTACK_TYPE_IDX=$((TASK_ID % N_ATTACK_TYPES))
+TASK_ID=$((TASK_ID / N_ATTACK_TYPES))
+SEED_IDX=$((TASK_ID % N_SEEDS))
+COND_IDX=$((TASK_ID / N_SEEDS))
 
 CONDITION=${CONDITIONS[$COND_IDX]}
 SEED=${SEEDS[$SEED_IDX]}
+ATTACK_TYPE=${ATTACK_TYPES[$ATTACK_TYPE_IDX]}
+ATTACK_LR=${ATTACK_LRS[$LR_IDX]}
+ATTACK_STEP=${ATTACK_STEPS[$ATTACK_STEP_IDX]}
+DIFFICULTY_LEVEL=${DIFFICULTY_LEVELS[$DIFFICULTY_IDX]}
+CONTEXT_LEN=${CONTEXT_LENGTHS[$CONTEXT_IDX]}
 
 echo "=========================================="
 echo "Immunization Evaluation Pipeline"
-echo "Condition: $CONDITION | Seed: $SEED"
+echo "Condition: $CONDITION | Seed: $SEED | Attack: $ATTACK_TYPE | LR: $ATTACK_LR | Step: $ATTACK_STEP | Difficulty: $DIFFICULTY_LEVEL | Context: $CONTEXT_LEN"
 echo "=========================================="
 echo "Job ID:   $SLURM_JOB_ID"
 echo "Array ID: $SLURM_ARRAY_TASK_ID"
@@ -118,27 +146,34 @@ fi
 
 echo "Running vLLM Evaluations..."
 
-for ATTACK_STEP in 0 10 50 100 250 500; do
-    if [ "$ATTACK_STEP" -eq 0 ]; then
-        ADAPTER_PATH="results/adapters/${CONDITION}"
-    else
-        ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/attack_step_${ATTACK_STEP}"
-    fi
-    
-    echo "Evaluating Attack Step: $ATTACK_STEP"
-    
-    # We ignore ADAPTER_PATH if it doesn't exist, though typically in offline we just pass it
-    # ensure your eval script handles missing adapter nicely or creates mock.
-    
-    python scripts/eval_vllm.py \
-        --model_path "$MODEL_PATH" \
-        --adapter_path "$ADAPTER_PATH" \
-        --prompts_file "results/data/eval_prompts.jsonl" \
-        --output_dir "results/vllm" \
-        --run_id "experiment_1" \
-        --condition "$CONDITION" \
-        --seed "$SEED" \
-        --attack_step "$ATTACK_STEP"
-done
+if [ "$ATTACK_STEP" -eq 0 ]; then
+    ADAPTER_PATH="results/adapters/${CONDITION}"
+else
+    ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/${ATTACK_TYPE}/lr_${ATTACK_LR}/difficulty_${DIFFICULTY_LEVEL}/attack_step_${ATTACK_STEP}"
+fi
+
+PROMPTS_FILE="results/data/eval_prompts_context_${CONTEXT_LEN}_difficulty_${DIFFICULTY_LEVEL}.jsonl"
+if [ ! -f "$PROMPTS_FILE" ]; then
+    PROMPTS_FILE="results/data/eval_prompts.jsonl"
+fi
+
+echo "Evaluating Attack Step: $ATTACK_STEP"
+echo "Adapter: $ADAPTER_PATH"
+echo "Prompts: $PROMPTS_FILE"
+
+python scripts/eval_vllm.py \
+    --model_path "$MODEL_PATH" \
+    --adapter_path "$ADAPTER_PATH" \
+    --prompts_file "$PROMPTS_FILE" \
+    --output_dir "results/vllm" \
+    --run_id "iteration2" \
+    --condition "$CONDITION" \
+    --seed "$SEED" \
+    --attack_type "$ATTACK_TYPE" \
+    --attack_lr "$ATTACK_LR" \
+    --attack_step "$ATTACK_STEP" \
+    --difficulty_level "$DIFFICULTY_LEVEL" \
+    --context_len "$CONTEXT_LEN" \
+    --batch_size "${VLLM_BATCH_SIZE:-512}"
 
 echo "✅ Job completed at $(date)"

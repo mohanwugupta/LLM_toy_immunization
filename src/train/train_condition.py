@@ -34,10 +34,11 @@ def train(args):
     print(f"Starting training for condition {args.condition}...")
     
     global_step = 0
+    max_steps = getattr(args, "max_steps", None)
     for epoch in range(args.epochs):
         total_loss = 0
         for batch_idx, batch in enumerate(dataloader):
-            if args.max_steps is not None and global_step >= args.max_steps:
+            if max_steps is not None and global_step >= max_steps:
                 break
             # For C1, only Normal contexts
             if args.condition == "C1":
@@ -65,8 +66,8 @@ def train(args):
                 print(f"Epoch {epoch} | Batch {batch_idx} | Loss: {loss.item():.4f}")
             global_step += 1
             
-        if args.max_steps is not None and global_step >= args.max_steps:
-            print(f"Reached max_steps ({args.max_steps}), stopping training.")
+        if max_steps is not None and global_step >= max_steps:
+            print(f"Reached max_steps ({max_steps}), stopping training.")
             break
                 
     # Save the adapter

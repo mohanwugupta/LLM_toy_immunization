@@ -1,6 +1,9 @@
-from peft import LoraConfig, get_peft_model, TaskType
-from transformers import PreTrainedModel
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
+
+if TYPE_CHECKING:
+    from transformers import PreTrainedModel
+else:
+    PreTrainedModel = object
 
 
 def prepare_lora_model(
@@ -14,6 +17,8 @@ def prepare_lora_model(
     Wrap a Hugging Face model with LoRA using PEFT.
     Target modules default to attention projections: q_proj, k_proj, v_proj, o_proj.
     """
+    from peft import LoraConfig, TaskType, get_peft_model
+
     if target_modules is None:
         target_modules = ["q_proj", "k_proj", "v_proj", "o_proj"]
 
