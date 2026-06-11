@@ -1,0 +1,22 @@
+==========================================
+Immunization Attack Pipeline
+Condition: C3 | Seed: 42
+==========================================
+Job ID:   9554266
+Array ID: 6
+Node:     della-i12g1
+Time:     Thu Jun 11 02:34:35 PM EDT 2026
+GPUs:     0
+
+Running Uniform attack fine-tuning on C3...
+Adapter: results/adapters/C3 -> Output: results/attack/C3/seed_42
+Loading base model on cuda...
+Loading adapter from results/adapters/C3...
+trainable params: 1,703,936 || all params: 1,237,518,336 || trainable%: 0.1377
+Starting Uniform-only attack...
+Step 10 | Loss: 11.3665
+Step 50 | Loss: 6.5008
+Step 100 | Loss: 6.6763
+Step 250 | Loss: 6.0884
+Step 500 | Loss: 5.5493
+✅ Attack completed at Thu Jun 11 02:35:20 PM EDT 2026

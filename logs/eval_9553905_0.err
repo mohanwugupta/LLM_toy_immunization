@@ -1,0 +1,203 @@
+/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+(EngineCore pid=1385005) /home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/executor/uniproc_executor.py:57: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+(EngineCore pid=1385005)   distributed_init_method = get_distributed_init_method(get_ip(), get_open_port())
+(EngineCore pid=1385005) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(EngineCore pid=1385005) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(EngineCore pid=1385005) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=1385005) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.16it/s]
+(EngineCore pid=1385005) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.16it/s]
+(EngineCore pid=1385005) 
+(EngineCore pid=1385005) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/102 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   2%|▏         | 2/102 [00:00<00:05, 19.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   5%|▍         | 5/102 [00:00<00:03, 25.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   9%|▉         | 9/102 [00:00<00:03, 28.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  13%|█▎        | 13/102 [00:00<00:02, 30.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  17%|█▋        | 17/102 [00:00<00:02, 31.26it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  21%|██        | 21/102 [00:00<00:02, 31.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▍       | 25/102 [00:00<00:02, 32.14it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  28%|██▊       | 29/102 [00:00<00:02, 32.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  32%|███▏      | 33/102 [00:01<00:02, 32.29it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  36%|███▋      | 37/102 [00:01<00:02, 31.33it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  40%|████      | 41/102 [00:01<00:01, 31.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  44%|████▍     | 45/102 [00:01<00:01, 31.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  48%|████▊     | 49/102 [00:01<00:01, 32.15it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  52%|█████▏    | 53/102 [00:01<00:01, 32.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  56%|█████▌    | 57/102 [00:01<00:01, 32.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  60%|█████▉    | 61/102 [00:01<00:01, 32.25it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  64%|██████▎   | 65/102 [00:02<00:01, 31.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  68%|██████▊   | 69/102 [00:02<00:01, 31.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  72%|███████▏  | 73/102 [00:02<00:00, 31.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▌  | 77/102 [00:02<00:00, 30.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  79%|███████▉  | 81/102 [00:02<00:00, 30.85it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  83%|████████▎ | 85/102 [00:02<00:00, 31.38it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  87%|████████▋ | 89/102 [00:02<00:00, 31.38it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  91%|█████████ | 93/102 [00:02<00:00, 31.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  95%|█████████▌| 97/102 [00:03<00:00, 30.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  99%|█████████▉| 101/102 [00:03<00:00, 28.91it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 102/102 [00:03<00:00, 31.04it/s]
+(EngineCore pid=1385005) Capturing CUDA graphs (decode, FULL):   0%|          | 0/70 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   4%|▍         | 3/70 [00:00<00:03, 22.22it/s]Capturing CUDA graphs (decode, FULL):  10%|█         | 7/70 [00:00<00:02, 27.51it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 11/70 [00:00<00:02, 29.10it/s]Capturing CUDA graphs (decode, FULL):  21%|██▏       | 15/70 [00:00<00:01, 30.19it/s]Capturing CUDA graphs (decode, FULL):  27%|██▋       | 19/70 [00:00<00:01, 30.74it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 23/70 [00:00<00:01, 31.02it/s]Capturing CUDA graphs (decode, FULL):  39%|███▊      | 27/70 [00:00<00:01, 31.35it/s]Capturing CUDA graphs (decode, FULL):  44%|████▍     | 31/70 [00:01<00:01, 31.64it/s]Capturing CUDA graphs (decode, FULL):  50%|█████     | 35/70 [00:01<00:01, 31.78it/s]Capturing CUDA graphs (decode, FULL):  56%|█████▌    | 39/70 [00:01<00:00, 32.02it/s]Capturing CUDA graphs (decode, FULL):  61%|██████▏   | 43/70 [00:01<00:00, 32.11it/s]Capturing CUDA graphs (decode, FULL):  67%|██████▋   | 47/70 [00:01<00:00, 32.03it/s]Capturing CUDA graphs (decode, FULL):  73%|███████▎  | 51/70 [00:01<00:00, 32.24it/s]Capturing CUDA graphs (decode, FULL):  79%|███████▊  | 55/70 [00:01<00:00, 32.29it/s]Capturing CUDA graphs (decode, FULL):  84%|████████▍ | 59/70 [00:01<00:00, 32.45it/s]Capturing CUDA graphs (decode, FULL):  90%|█████████ | 63/70 [00:02<00:00, 32.33it/s]Capturing CUDA graphs (decode, FULL):  96%|█████████▌| 67/70 [00:02<00:00, 32.36it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 70/70 [00:02<00:00, 31.60it/s]
+Rendering prompts:   0%|          | 0/4500 [00:00<?, ?it/s]Rendering prompts:   5%|▍         | 223/4500 [00:00<00:01, 2229.65it/s]Rendering prompts:  11%|█         | 478/4500 [00:00<00:01, 2413.05it/s]Rendering prompts:  16%|█▌        | 720/4500 [00:00<00:01, 2395.58it/s]Rendering prompts:  22%|██▏       | 976/4500 [00:00<00:01, 2456.73it/s]Rendering prompts:  27%|██▋       | 1222/4500 [00:00<00:01, 2342.94it/s]Rendering prompts:  33%|███▎      | 1467/4500 [00:00<00:01, 2375.11it/s]Rendering prompts:  38%|███▊      | 1706/4500 [00:00<00:01, 2345.51it/s]Rendering prompts:  44%|████▍     | 1969/4500 [00:00<00:01, 2432.83it/s]Rendering prompts:  49%|████▉     | 2213/4500 [00:00<00:00, 2398.83it/s]Rendering prompts:  55%|█████▍    | 2469/4500 [00:01<00:00, 2447.25it/s]Rendering prompts:  60%|██████    | 2715/4500 [00:01<00:00, 2412.84it/s]Rendering prompts:  66%|██████▌   | 2973/4500 [00:01<00:00, 2462.51it/s]Rendering prompts:  72%|███████▏  | 3220/4500 [00:01<00:00, 2434.75it/s]Rendering prompts:  77%|███████▋  | 3478/4500 [00:01<00:00, 2474.96it/s]Rendering prompts:  83%|████████▎ | 3726/4500 [00:01<00:00, 2452.56it/s]Rendering prompts:  88%|████████▊ | 3972/4500 [00:01<00:00, 2436.58it/s]Rendering prompts:  94%|█████████▎| 4216/4500 [00:01<00:00, 2411.88it/s]Rendering prompts:  99%|█████████▉| 4474/4500 [00:01<00:00, 2458.68it/s]Rendering prompts: 100%|██████████| 4500/4500 [00:01<00:00, 2413.38it/s]
+Processed prompts:   0%|          | 0/4500 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/4500 [00:00<1:02:59,  1.19it/s, est. speed input: 39.29 toks/s, output: 1.19 toks/s]Processed prompts:   0%|          | 2/4500 [00:01<48:58,  1.53it/s, est. speed input: 48.44 toks/s, output: 1.47 toks/s]  Processed prompts:   2%|▏         | 83/4500 [00:01<00:58, 75.82it/s, est. speed input: 6721.40 toks/s, output: 49.73 toks/s]Processed prompts:   3%|▎         | 133/4500 [00:02<00:57, 75.34it/s, est. speed input: 9173.28 toks/s, output: 56.89 toks/s]Processed prompts:   4%|▍         | 186/4500 [00:02<00:46, 92.49it/s, est. speed input: 11997.32 toks/s, output: 68.25 toks/s]Processed prompts:   6%|▌         | 250/4500 [00:02<00:33, 127.22it/s, est. speed input: 14553.92 toks/s, output: 84.36 toks/s]Processed prompts:   6%|▋         | 289/4500 [00:03<00:36, 114.13it/s, est. speed input: 15923.71 toks/s, output: 84.94 toks/s]Processed prompts:   8%|▊         | 362/4500 [00:03<00:25, 162.24it/s, est. speed input: 18093.55 toks/s, output: 100.96 toks/s]Processed prompts:   9%|▊         | 392/4500 [00:04<00:41, 98.68it/s, est. speed input: 17282.63 toks/s, output: 89.55 toks/s]  Processed prompts:  10%|█         | 468/4500 [00:04<00:27, 145.89it/s, est. speed input: 18989.84 toks/s, output: 102.91 toks/s]Processed prompts:  11%|█         | 496/4500 [00:05<00:34, 115.44it/s, est. speed input: 19445.02 toks/s, output: 98.77 toks/s] Processed prompts:  13%|█▎        | 574/4500 [00:05<00:23, 169.70it/s, est. speed input: 20823.72 toks/s, output: 110.84 toks/s]Processed prompts:  13%|█▎        | 603/4500 [00:05<00:30, 126.18it/s, est. speed input: 21099.62 toks/s, output: 106.26 toks/s]Processed prompts:  15%|█▌        | 681/4500 [00:06<00:29, 127.35it/s, est. speed input: 20676.43 toks/s, output: 108.45 toks/s]Processed prompts:  16%|█▌        | 717/4500 [00:06<00:32, 116.61it/s, est. speed input: 20966.05 toks/s, output: 107.27 toks/s]Processed prompts:  17%|█▋        | 784/4500 [00:07<00:27, 135.82it/s, est. speed input: 21511.62 toks/s, output: 111.46 toks/s]Processed prompts:  19%|█▊        | 842/4500 [00:07<00:23, 152.88it/s, est. speed input: 22135.44 toks/s, output: 115.24 toks/s]Processed prompts:  20%|█▉        | 887/4500 [00:07<00:25, 139.19it/s, est. speed input: 22397.79 toks/s, output: 114.98 toks/s]Processed prompts:  21%|██        | 955/4500 [00:07<00:20, 174.24it/s, est. speed input: 23132.10 toks/s, output: 120.48 toks/s]Processed prompts:  22%|██▏       | 990/4500 [00:08<00:25, 138.29it/s, est. speed input: 23183.86 toks/s, output: 118.14 toks/s]Processed prompts:  24%|██▎       | 1064/4500 [00:08<00:25, 133.24it/s, est. speed input: 22857.21 toks/s, output: 118.65 toks/s]Processed prompts:  24%|██▍       | 1094/4500 [00:09<00:30, 111.48it/s, est. speed input: 22924.42 toks/s, output: 115.97 toks/s]Processed prompts:  26%|██▌       | 1171/4500 [00:09<00:20, 161.07it/s, est. speed input: 23631.46 toks/s, output: 122.06 toks/s]Processed prompts:  27%|██▋       | 1197/4500 [00:10<00:27, 122.01it/s, est. speed input: 23599.31 toks/s, output: 118.82 toks/s]Processed prompts:  28%|██▊       | 1277/4500 [00:10<00:17, 181.03it/s, est. speed input: 24295.09 toks/s, output: 125.00 toks/s]Processed prompts:  29%|██▉       | 1307/4500 [00:10<00:24, 132.99it/s, est. speed input: 24225.23 toks/s, output: 122.04 toks/s]Processed prompts:  31%|███       | 1382/4500 [00:10<00:18, 165.71it/s, est. speed input: 24557.99 toks/s, output: 125.73 toks/s]Processed prompts:  32%|███▏      | 1429/4500 [00:11<00:19, 157.18it/s, est. speed input: 24740.20 toks/s, output: 126.08 toks/s]Processed prompts:  33%|███▎      | 1486/4500 [00:12<00:27, 110.52it/s, est. speed input: 23950.25 toks/s, output: 121.92 toks/s]Processed prompts:  34%|███▍      | 1548/4500 [00:12<00:21, 135.71it/s, est. speed input: 24303.34 toks/s, output: 124.54 toks/s]Processed prompts:  35%|███▌      | 1588/4500 [00:12<00:23, 122.86it/s, est. speed input: 24333.24 toks/s, output: 123.50 toks/s]Processed prompts:  37%|███▋      | 1660/4500 [00:13<00:17, 163.76it/s, est. speed input: 24792.46 toks/s, output: 127.19 toks/s]Processed prompts:  38%|███▊      | 1692/4500 [00:13<00:21, 131.66it/s, est. speed input: 24813.14 toks/s, output: 125.37 toks/s]Processed prompts:  39%|███▉      | 1767/4500 [00:13<00:15, 181.34it/s, est. speed input: 25268.52 toks/s, output: 129.30 toks/s]Processed prompts:  40%|███▉      | 1795/4500 [00:14<00:20, 134.48it/s, est. speed input: 25215.31 toks/s, output: 127.01 toks/s]Processed prompts:  42%|████▏     | 1874/4500 [00:14<00:13, 194.51it/s, est. speed input: 25708.47 toks/s, output: 131.25 toks/s]Processed prompts:  42%|████▏     | 1905/4500 [00:14<00:18, 140.35it/s, est. speed input: 25668.44 toks/s, output: 129.01 toks/s]Processed prompts:  44%|████▍     | 1980/4500 [00:14<00:13, 188.35it/s, est. speed input: 25983.19 toks/s, output: 132.41 toks/s]Processed prompts:  45%|████▍     | 2011/4500 [00:15<00:17, 143.60it/s, est. speed input: 25935.27 toks/s, output: 130.66 toks/s]Processed prompts:  46%|████▋     | 2084/4500 [00:16<00:21, 114.49it/s, est. speed input: 25290.68 toks/s, output: 128.38 toks/s]Processed prompts:  48%|████▊     | 2140/4500 [00:16<00:18, 131.10it/s, est. speed input: 25475.57 toks/s, output: 129.59 toks/s]Processed prompts:  49%|████▊     | 2187/4500 [00:16<00:18, 127.59it/s, est. speed input: 25548.00 toks/s, output: 129.33 toks/s]Processed prompts:  50%|█████     | 2253/4500 [00:17<00:14, 158.96it/s, est. speed input: 25818.56 toks/s, output: 131.51 toks/s]Processed prompts:  51%|█████     | 2290/4500 [00:17<00:16, 134.01it/s, est. speed input: 25818.67 toks/s, output: 130.38 toks/s]Processed prompts:  53%|█████▎    | 2363/4500 [00:17<00:11, 179.45it/s, est. speed input: 26143.62 toks/s, output: 133.16 toks/s]Processed prompts:  53%|█████▎    | 2393/4500 [00:18<00:15, 136.56it/s, est. speed input: 26095.80 toks/s, output: 131.48 toks/s]Processed prompts:  55%|█████▍    | 2470/4500 [00:18<00:10, 192.05it/s, est. speed input: 26455.59 toks/s, output: 134.55 toks/s]Processed prompts:  56%|█████▌    | 2498/4500 [00:18<00:14, 137.94it/s, est. speed input: 26410.98 toks/s, output: 132.62 toks/s]Processed prompts:  57%|█████▋    | 2576/4500 [00:18<00:09, 197.22it/s, est. speed input: 26715.65 toks/s, output: 135.70 toks/s]Processed prompts:  58%|█████▊    | 2607/4500 [00:19<00:13, 140.68it/s, est. speed input: 26629.46 toks/s, output: 133.85 toks/s]Processed prompts:  60%|█████▉    | 2682/4500 [00:19<00:10, 177.39it/s, est. speed input: 26819.50 toks/s, output: 135.94 toks/s]Processed prompts:  61%|██████    | 2724/4500 [00:20<00:11, 157.23it/s, est. speed input: 26839.51 toks/s, output: 135.57 toks/s]Processed prompts:  62%|██████▏   | 2785/4500 [00:21<00:16, 106.21it/s, est. speed input: 26166.54 toks/s, output: 132.35 toks/s]Processed prompts:  63%|██████▎   | 2846/4500 [00:21<00:12, 129.64it/s, est. speed input: 26347.14 toks/s, output: 133.65 toks/s]Processed prompts:  64%|██████▍   | 2888/4500 [00:21<00:13, 121.58it/s, est. speed input: 26354.41 toks/s, output: 133.04 toks/s]Processed prompts:  66%|██████▌   | 2958/4500 [00:21<00:09, 159.69it/s, est. speed input: 26592.53 toks/s, output: 135.03 toks/s]Processed prompts:  66%|██████▋   | 2991/4500 [00:22<00:11, 129.39it/s, est. speed input: 26548.21 toks/s, output: 133.77 toks/s]Processed prompts:  68%|██████▊   | 3066/4500 [00:22<00:08, 178.23it/s, est. speed input: 26820.05 toks/s, output: 136.08 toks/s]Processed prompts:  69%|██████▉   | 3094/4500 [00:22<00:10, 133.00it/s, est. speed input: 26743.66 toks/s, output: 134.53 toks/s]Processed prompts:  70%|███████   | 3172/4500 [00:23<00:07, 189.01it/s, est. speed input: 27022.16 toks/s, output: 136.98 toks/s]Processed prompts:  71%|███████   | 3201/4500 [00:23<00:09, 136.86it/s, est. speed input: 26992.79 toks/s, output: 135.41 toks/s]Processed prompts:  73%|███████▎  | 3279/4500 [00:23<00:06, 194.81it/s, est. speed input: 27215.11 toks/s, output: 137.82 toks/s]Processed prompts:  74%|███████▎  | 3310/4500 [00:24<00:08, 142.89it/s, est. speed input: 27137.14 toks/s, output: 136.44 toks/s]Processed prompts:  75%|███████▌  | 3383/4500 [00:24<00:06, 168.45it/s, est. speed input: 27237.68 toks/s, output: 137.69 toks/s]Processed prompts:  76%|███████▋  | 3435/4500 [00:24<00:06, 169.04it/s, est. speed input: 27320.18 toks/s, output: 138.09 toks/s]Processed prompts:  77%|███████▋  | 3486/4500 [00:25<00:06, 155.63it/s, est. speed input: 27334.96 toks/s, output: 137.96 toks/s]Processed prompts:  79%|███████▉  | 3551/4500 [00:25<00:05, 182.12it/s, est. speed input: 27492.72 toks/s, output: 139.21 toks/s]Processed prompts:  80%|███████▉  | 3590/4500 [00:25<00:06, 148.16it/s, est. speed input: 27476.08 toks/s, output: 138.40 toks/s]Processed prompts:  81%|████████▏ | 3662/4500 [00:26<00:04, 193.24it/s, est. speed input: 27674.21 toks/s, output: 140.19 toks/s]Processed prompts:  82%|████████▏ | 3692/4500 [00:27<00:09, 87.93it/s, est. speed input: 26875.01 toks/s, output: 135.24 toks/s] Processed prompts:  84%|████████▎ | 3768/4500 [00:27<00:05, 129.08it/s, est. speed input: 27098.26 toks/s, output: 137.17 toks/s]Processed prompts:  84%|████████▍ | 3796/4500 [00:27<00:06, 107.54it/s, est. speed input: 27048.14 toks/s, output: 135.87 toks/s]Processed prompts:  86%|████████▌ | 3875/4500 [00:28<00:03, 160.40it/s, est. speed input: 27280.59 toks/s, output: 137.98 toks/s]Processed prompts:  87%|████████▋ | 3906/4500 [00:28<00:04, 124.89it/s, est. speed input: 27226.55 toks/s, output: 136.72 toks/s]Processed prompts:  88%|████████▊ | 3981/4500 [00:28<00:03, 164.16it/s, est. speed input: 27351.72 toks/s, output: 138.21 toks/s]Processed prompts:  89%|████████▉ | 4020/4500 [00:29<00:03, 143.95it/s, est. speed input: 27347.28 toks/s, output: 137.72 toks/s]Processed prompts:  91%|█████████ | 4084/4500 [00:29<00:02, 154.81it/s, est. speed input: 27393.91 toks/s, output: 138.23 toks/s]Processed prompts:  92%|█████████▏| 4143/4500 [00:29<00:02, 170.19it/s, est. speed input: 27498.81 toks/s, output: 138.96 toks/s]Processed prompts:  93%|█████████▎| 4188/4500 [00:30<00:02, 149.83it/s, est. speed input: 27508.16 toks/s, output: 138.58 toks/s]Processed prompts:  95%|█████████▍| 4256/4500 [00:30<00:01, 184.67it/s, est. speed input: 27650.72 toks/s, output: 139.85 toks/s]Processed prompts:  95%|█████████▌| 4291/4500 [00:30<00:01, 145.24it/s, est. speed input: 27624.09 toks/s, output: 138.99 toks/s]Processed prompts:  97%|█████████▋| 4365/4500 [00:31<00:00, 194.15it/s, est. speed input: 27804.16 toks/s, output: 140.59 toks/s]Processed prompts:  98%|█████████▊| 4394/4500 [00:31<00:00, 142.36it/s, est. speed input: 27751.85 toks/s, output: 139.48 toks/s]Processed prompts:  99%|█████████▉| 4471/4500 [00:31<00:00, 197.95it/s, est. speed input: 27938.96 toks/s, output: 141.19 toks/s]Processed prompts: 100%|██████████| 4500/4500 [00:31<00:00, 197.95it/s, est. speed input: 28312.94 toks/s, output: 141.99 toks/s]Processed prompts: 100%|██████████| 4500/4500 [00:31<00:00, 141.99it/s, est. speed input: 28312.94 toks/s, output: 141.99 toks/s]
+/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+(EngineCore pid=1385158) /home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/executor/uniproc_executor.py:57: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+(EngineCore pid=1385158)   distributed_init_method = get_distributed_init_method(get_ip(), get_open_port())
+(EngineCore pid=1385158) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(EngineCore pid=1385158) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(EngineCore pid=1385158) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=1385158) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.16it/s]
+(EngineCore pid=1385158) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.16it/s]
+(EngineCore pid=1385158) 
+(EngineCore pid=1385158) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/102 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   3%|▎         | 3/102 [00:00<00:04, 21.79it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   7%|▋         | 7/102 [00:00<00:03, 27.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  11%|█         | 11/102 [00:00<00:03, 29.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  15%|█▍        | 15/102 [00:00<00:02, 30.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  19%|█▊        | 19/102 [00:00<00:02, 31.23it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  23%|██▎       | 23/102 [00:00<00:02, 31.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  26%|██▋       | 27/102 [00:00<00:02, 31.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  30%|███       | 31/102 [00:01<00:02, 31.27it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  34%|███▍      | 35/102 [00:01<00:02, 30.44it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  38%|███▊      | 39/102 [00:01<00:02, 30.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  42%|████▏     | 43/102 [00:01<00:01, 31.36it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  46%|████▌     | 47/102 [00:01<00:01, 31.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  50%|█████     | 51/102 [00:01<00:01, 31.84it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  54%|█████▍    | 55/102 [00:01<00:01, 31.85it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  58%|█████▊    | 59/102 [00:01<00:01, 31.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  62%|██████▏   | 63/102 [00:02<00:01, 31.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  66%|██████▌   | 67/102 [00:02<00:01, 31.26it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  70%|██████▉   | 71/102 [00:02<00:01, 30.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  74%|███████▎  | 75/102 [00:02<00:00, 31.33it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  77%|███████▋  | 79/102 [00:02<00:00, 31.49it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  81%|████████▏ | 83/102 [00:02<00:00, 31.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  85%|████████▌ | 87/102 [00:02<00:00, 31.46it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  89%|████████▉ | 91/102 [00:02<00:00, 31.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  93%|█████████▎| 95/102 [00:03<00:00, 30.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  97%|█████████▋| 99/102 [00:03<00:00, 30.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 102/102 [00:03<00:00, 30.78it/s]
+(EngineCore pid=1385158) Capturing CUDA graphs (decode, FULL):   0%|          | 0/70 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   4%|▍         | 3/70 [00:00<00:02, 22.35it/s]Capturing CUDA graphs (decode, FULL):  10%|█         | 7/70 [00:00<00:02, 27.42it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 11/70 [00:00<00:02, 28.97it/s]Capturing CUDA graphs (decode, FULL):  21%|██▏       | 15/70 [00:00<00:01, 30.02it/s]Capturing CUDA graphs (decode, FULL):  27%|██▋       | 19/70 [00:00<00:01, 30.51it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 23/70 [00:00<00:01, 30.72it/s]Capturing CUDA graphs (decode, FULL):  39%|███▊      | 27/70 [00:00<00:01, 31.07it/s]Capturing CUDA graphs (decode, FULL):  44%|████▍     | 31/70 [00:01<00:01, 31.22it/s]Capturing CUDA graphs (decode, FULL):  50%|█████     | 35/70 [00:01<00:01, 31.46it/s]Capturing CUDA graphs (decode, FULL):  56%|█████▌    | 39/70 [00:01<00:00, 31.67it/s]Capturing CUDA graphs (decode, FULL):  61%|██████▏   | 43/70 [00:01<00:00, 31.78it/s]Capturing CUDA graphs (decode, FULL):  67%|██████▋   | 47/70 [00:01<00:00, 31.73it/s]Capturing CUDA graphs (decode, FULL):  73%|███████▎  | 51/70 [00:01<00:00, 31.72it/s]Capturing CUDA graphs (decode, FULL):  79%|███████▊  | 55/70 [00:01<00:00, 31.80it/s]Capturing CUDA graphs (decode, FULL):  84%|████████▍ | 59/70 [00:01<00:00, 31.82it/s]Capturing CUDA graphs (decode, FULL):  90%|█████████ | 63/70 [00:02<00:00, 31.94it/s]Capturing CUDA graphs (decode, FULL):  96%|█████████▌| 67/70 [00:02<00:00, 31.98it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 70/70 [00:02<00:00, 31.24it/s]
+Rendering prompts:   0%|          | 0/4500 [00:00<?, ?it/s](EngineCore pid=1385158) Process EngineCore:
+Traceback (most recent call last):
+(EngineCore pid=1385158) Traceback (most recent call last):
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/worker_manager.py", line 118, in _load_adapter
+(EngineCore pid=1385158)     peft_helper = PEFTHelper.from_local_dir(
+(EngineCore pid=1385158)         lora_path,
+(EngineCore pid=1385158)         self.max_position_embeddings,
+(EngineCore pid=1385158)         lora_request.tensorizer_config_dict,
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/peft_helper.py", line 108, in from_local_dir
+(EngineCore pid=1385158)     with open(lora_config_path) as f:
+(EngineCore pid=1385158)          ~~~~^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158) FileNotFoundError: [Errno 2] No such file or directory: 'results/attack/C1/seed_42/attack_step_10/adapter_config.json'
+(EngineCore pid=1385158) 
+(EngineCore pid=1385158) The above exception was the direct cause of the following exception:
+(EngineCore pid=1385158) 
+(EngineCore pid=1385158) Traceback (most recent call last):
+  File "/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/scripts/eval_vllm.py", line 115, in <module>
+    run_vllm_evaluation(
+    ~~~~~~~~~~~~~~~~~~~^
+        args.model_path,
+        ^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        args.attack_step
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/scripts/eval_vllm.py", line 62, in run_vllm_evaluation
+    outputs = llm.generate(
+        prompts,
+        sampling_params=sampling_params,
+        lora_request=lora_request
+    )
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 500, in generate
+    return self._run_completion(
+           ~~~~~~~~~~~~~~~~~~~~^
+        prompts=prompts,
+        ^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        priority=priority,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 1851, in _run_completion
+    self._add_completion_requests(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        prompts=prompts,
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        tokenization_kwargs=tokenization_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 1824, in _add_completion_requests
+    return self._render_and_add_requests(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        prompts=(
+        ^^^^^^^^^
+    ...<9 lines>...
+        priorities=seq_priority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 1964, in _render_and_add_requests
+    raise e
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 1951, in _render_and_add_requests
+    request_id = self._add_request(
+        prompt,
+    ...<5 lines>...
+        priority=0 if priorities is None else priorities[i],
+    )
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/entrypoints/llm.py", line 1981, in _add_request
+    return self.llm_engine.add_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request_id,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        priority=priority,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/llm_engine.py", line 274, in add_request
+    self.engine_core.add_request(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core_client.py", line 813, in add_request
+    self._send_input(EngineCoreRequestType.ADD, request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core_client.py", line 786, in _send_input
+    self.ensure_alive()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core_client.py", line 627, in ensure_alive
+    raise EngineDeadError()
+vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+(EngineCore pid=1385158)     self.run()
+(EngineCore pid=1385158)     ~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/multiprocessing/process.py", line 108, in run
+(EngineCore pid=1385158)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=1385158)     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core.py", line 1112, in run_engine_core
+(EngineCore pid=1385158)     raise e
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core.py", line 1101, in run_engine_core
+(EngineCore pid=1385158)     engine_core.run_busy_loop()
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core.py", line 1142, in run_busy_loop
+(EngineCore pid=1385158)     self._process_engine_step()
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core.py", line 1181, in _process_engine_step
+(EngineCore pid=1385158)     outputs, model_executed = self.step_fn()
+(EngineCore pid=1385158)                               ~~~~~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/engine/core.py", line 451, in step_with_batch_queue
+(EngineCore pid=1385158)     exec_future = self.model_executor.execute_model(
+(EngineCore pid=1385158)         scheduler_output, non_block=True
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/executor/uniproc_executor.py", line 114, in execute_model
+(EngineCore pid=1385158)     output.result()
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+(EngineCore pid=1385158)     return self.__get_result()
+(EngineCore pid=1385158)            ~~~~~~~~~~~~~~~~~^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+(EngineCore pid=1385158)     raise self._exception
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/executor/uniproc_executor.py", line 84, in collective_rpc
+(EngineCore pid=1385158)     result = run_method(self.driver_worker, method, args, kwargs)
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/serial_utils.py", line 510, in run_method
+(EngineCore pid=1385158)     return func(*args, **kwargs)
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/worker_base.py", line 332, in execute_model
+(EngineCore pid=1385158)     return self.worker.execute_model(scheduler_output)
+(EngineCore pid=1385158)            ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+(EngineCore pid=1385158)     return func(*args, **kwargs)
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/gpu_worker.py", line 803, in execute_model
+(EngineCore pid=1385158)     output = self.model_runner.execute_model(
+(EngineCore pid=1385158)         scheduler_output, intermediate_tensors
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+(EngineCore pid=1385158)     return func(*args, **kwargs)
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/gpu_model_runner.py", line 3858, in execute_model
+(EngineCore pid=1385158)     logits_indices, spec_decode_metadata = self._prepare_inputs(
+(EngineCore pid=1385158)                                            ~~~~~~~~~~~~~~~~~~~~^
+(EngineCore pid=1385158)         scheduler_output,
+(EngineCore pid=1385158)         ^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)         num_scheduled_tokens_np,
+(EngineCore pid=1385158)         ^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)     ^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/gpu_model_runner.py", line 2086, in _prepare_inputs
+(EngineCore pid=1385158)     self.set_active_loras(
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~~~~~~^
+(EngineCore pid=1385158)         self.input_batch, num_scheduled_tokens, num_sampled_tokens
+(EngineCore pid=1385158)         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)     ^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/lora_model_runner_mixin.py", line 89, in set_active_loras
+(EngineCore pid=1385158)     return self._set_active_loras(
+(EngineCore pid=1385158)            ~~~~~~~~~~~~~~~~~~~~~~^
+(EngineCore pid=1385158)         prompt_lora_mapping, token_lora_mapping, lora_requests, mapping_type
+(EngineCore pid=1385158)         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)     )
+(EngineCore pid=1385158)     ^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/worker/lora_model_runner_mixin.py", line 67, in _set_active_loras
+(EngineCore pid=1385158)     self.lora_manager.set_active_adapters(lora_requests, lora_mapping)
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/worker_manager.py", line 204, in set_active_adapters
+(EngineCore pid=1385158)     self._apply_adapters(requests)
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/worker_manager.py", line 291, in _apply_adapters
+(EngineCore pid=1385158)     self.add_adapter(lora)
+(EngineCore pid=1385158)     ~~~~~~~~~~~~~~~~^^^^^^
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/worker_manager.py", line 307, in add_adapter
+(EngineCore pid=1385158)     lora = self._load_adapter(lora_request)
+(EngineCore pid=1385158)   File "/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/lora/worker_manager.py", line 179, in _load_adapter
+(EngineCore pid=1385158)     raise LoRAAdapterNotFoundError(
+(EngineCore pid=1385158)         lora_request.lora_name, lora_request.lora_path
+(EngineCore pid=1385158)     ) from e
+(EngineCore pid=1385158) vllm.exceptions.LoRAAdapterNotFoundError: Loading lora eval_adapter failed: No adapter found for results/attack/C1/seed_42/attack_step_10
+Rendering prompts:   1%|▏         | 58/4500 [00:00<00:44, 99.30it/s]

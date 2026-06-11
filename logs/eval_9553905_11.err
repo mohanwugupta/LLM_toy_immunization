@@ -1,0 +1,11 @@
+/home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+(EngineCore pid=2716491) /home/mg9965/.conda/envs/PromptControlText/lib/python3.13/site-packages/vllm/v1/executor/uniproc_executor.py:57: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+(EngineCore pid=2716491)   distributed_init_method = get_distributed_init_method(get_ip(), get_open_port())
+(EngineCore pid=2716491) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(EngineCore pid=2716491) <frozen importlib._bootstrap_external>:1325: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(EngineCore pid=2716491) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=2716491) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.00it/s]
+(EngineCore pid=2716491) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.00it/s]
+(EngineCore pid=2716491) 
+[2026-06-11T14:32:26.283] error: *** JOB 9553905 ON della-l01g10 CANCELLED AT 2026-06-11T14:32:26 DUE to SIGNAL Terminated ***
