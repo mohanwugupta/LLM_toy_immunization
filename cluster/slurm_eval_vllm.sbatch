@@ -9,7 +9,7 @@
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 #SBATCH --mail-user=mg9965@princeton.edu
-#SBATCH --time=2:00:00
+#SBATCH --time=1:00:00
 #SBATCH --array=0-11
 #SBATCH --output=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.out
 #SBATCH --error=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.err
