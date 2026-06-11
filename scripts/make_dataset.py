@@ -1,6 +1,11 @@
 import argparse
 import json
+import sys
 from pathlib import Path
+
+# Add project root to sys.path so 'src' can be imported
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 from src.data.generate_numeric import generate_matched_pair
 
 def make_evaluation_dataset(output_file: str, seeds: int = 10):
