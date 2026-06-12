@@ -99,3 +99,9 @@ Implementation is ready for an Iteration 2 one-seed smoke run. No scientific C3 
 
 ### Next action
 Generate Iteration 2 prompt shards, run the one-seed smoke attack/eval/metrics/report path, then inspect C2 attack validity and C1 shortcut diagnostics before launching the full grid.
+
+### 2026-06-12 cluster evaluation consolidation
+- Updated `cluster/slurm_eval_vllm.sbatch` from 576 eval array jobs to 144 jobs.
+- New array dimensions are condition, seed, attack type, attack LR, and difficulty level.
+- Each eval job now loops internally over all context lengths `[16, 64, 128, 256]` and attack steps `[0, 10, 50, 100, 250, 500, 1000, 2500, 5000]`.
+- Increased eval wall time from 1 hour to 2 hours for the consolidated normal-cluster run.

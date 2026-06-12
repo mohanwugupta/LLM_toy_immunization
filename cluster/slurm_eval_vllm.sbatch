@@ -9,8 +9,8 @@
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 #SBATCH --mail-user=mg9965@princeton.edu
-#SBATCH --time=1:00:00
-#SBATCH --array=0-575
+#SBATCH --time=2:00:00
+#SBATCH --array=0-143
 #SBATCH --output=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.out
 #SBATCH --error=/scratch/gpfs/JORDANAT/mg9965/LLM_toy_immunization/logs/eval_%A_%a.err
 
@@ -32,11 +32,8 @@ N_SEEDS=${#SEEDS[@]}
 N_ATTACK_TYPES=${#ATTACK_TYPES[@]}
 N_ATTACK_LRS=${#ATTACK_LRS[@]}
 N_DIFFICULTY=${#DIFFICULTY_LEVELS[@]}
-N_CONTEXT=${#CONTEXT_LENGTHS[@]}
 
 TASK_ID=$SLURM_ARRAY_TASK_ID
-CONTEXT_IDX=$((TASK_ID % N_CONTEXT))
-TASK_ID=$((TASK_ID / N_CONTEXT))
 DIFFICULTY_IDX=$((TASK_ID % N_DIFFICULTY))
 TASK_ID=$((TASK_ID / N_DIFFICULTY))
 LR_IDX=$((TASK_ID % N_ATTACK_LRS))
@@ -51,11 +48,10 @@ SEED=${SEEDS[$SEED_IDX]}
 ATTACK_TYPE=${ATTACK_TYPES[$ATTACK_TYPE_IDX]}
 ATTACK_LR=${ATTACK_LRS[$LR_IDX]}
 DIFFICULTY_LEVEL=${DIFFICULTY_LEVELS[$DIFFICULTY_IDX]}
-CONTEXT_LEN=${CONTEXT_LENGTHS[$CONTEXT_IDX]}
 
 echo "=========================================="
 echo "Immunization Evaluation Pipeline"
-echo "Condition: $CONDITION | Seed: $SEED | Attack: $ATTACK_TYPE | LR: $ATTACK_LR | Difficulty: $DIFFICULTY_LEVEL | Context: $CONTEXT_LEN"
+echo "Condition: $CONDITION | Seed: $SEED | Attack: $ATTACK_TYPE | LR: $ATTACK_LR | Difficulty: $DIFFICULTY_LEVEL"
 echo "=========================================="
 echo "Job ID:   $SLURM_JOB_ID"
 echo "Array ID: $SLURM_ARRAY_TASK_ID"
@@ -142,37 +138,40 @@ fi
 
 echo "Running vLLM Evaluations..."
 
-PROMPTS_FILE="results/data/eval_prompts_context_${CONTEXT_LEN}_difficulty_${DIFFICULTY_LEVEL}.jsonl"
-if [ ! -f "$PROMPTS_FILE" ]; then
-    PROMPTS_FILE="results/data/eval_prompts.jsonl"
-fi
-
-echo "Prompts: $PROMPTS_FILE"
-
-for ATTACK_STEP in "${ATTACK_STEPS[@]}"; do
-    if [ "$ATTACK_STEP" -eq 0 ]; then
-        ADAPTER_PATH="results/adapters/${CONDITION}"
-    else
-        ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/${ATTACK_TYPE}/lr_${ATTACK_LR}/difficulty_${DIFFICULTY_LEVEL}/attack_step_${ATTACK_STEP}"
+for CONTEXT_LEN in "${CONTEXT_LENGTHS[@]}"; do
+    PROMPTS_FILE="results/data/eval_prompts_context_${CONTEXT_LEN}_difficulty_${DIFFICULTY_LEVEL}.jsonl"
+    if [ ! -f "$PROMPTS_FILE" ]; then
+        PROMPTS_FILE="results/data/eval_prompts.jsonl"
     fi
 
-    echo "Evaluating Attack Step: $ATTACK_STEP"
-    echo "Adapter: $ADAPTER_PATH"
+    echo "Context Length: $CONTEXT_LEN"
+    echo "Prompts: $PROMPTS_FILE"
 
-    python scripts/eval_vllm.py \
-        --model_path "$MODEL_PATH" \
-        --adapter_path "$ADAPTER_PATH" \
-        --prompts_file "$PROMPTS_FILE" \
-        --output_dir "results/vllm" \
-        --run_id "iteration2" \
-        --condition "$CONDITION" \
-        --seed "$SEED" \
-        --attack_type "$ATTACK_TYPE" \
-        --attack_lr "$ATTACK_LR" \
-        --attack_step "$ATTACK_STEP" \
-        --difficulty_level "$DIFFICULTY_LEVEL" \
-        --context_len "$CONTEXT_LEN" \
-        --batch_size "${VLLM_BATCH_SIZE:-512}"
+    for ATTACK_STEP in "${ATTACK_STEPS[@]}"; do
+        if [ "$ATTACK_STEP" -eq 0 ]; then
+            ADAPTER_PATH="results/adapters/${CONDITION}"
+        else
+            ADAPTER_PATH="results/attack/${CONDITION}/seed_${SEED}/${ATTACK_TYPE}/lr_${ATTACK_LR}/difficulty_${DIFFICULTY_LEVEL}/attack_step_${ATTACK_STEP}"
+        fi
+
+        echo "Evaluating Attack Step: $ATTACK_STEP"
+        echo "Adapter: $ADAPTER_PATH"
+
+        python scripts/eval_vllm.py \
+            --model_path "$MODEL_PATH" \
+            --adapter_path "$ADAPTER_PATH" \
+            --prompts_file "$PROMPTS_FILE" \
+            --output_dir "results/vllm" \
+            --run_id "iteration2" \
+            --condition "$CONDITION" \
+            --seed "$SEED" \
+            --attack_type "$ATTACK_TYPE" \
+            --attack_lr "$ATTACK_LR" \
+            --attack_step "$ATTACK_STEP" \
+            --difficulty_level "$DIFFICULTY_LEVEL" \
+            --context_len "$CONTEXT_LEN" \
+            --batch_size "${VLLM_BATCH_SIZE:-512}"
+    done
 done
 
 echo "✅ Job completed at $(date)"
